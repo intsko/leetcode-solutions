@@ -11,3 +11,6 @@ Explanation:
 */
 
 var replaceElements = function (arr) {};
+
+const result = replaceElements([17, 18, 5, 4, 6, 1]);
+console.log(result);
