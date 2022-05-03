@@ -10,7 +10,13 @@ Explanation:
 - index 5 --> there are no elements to the right of index 5, so we put -1.
 */
 
-var replaceElements = function (arr) {};
+var replaceElements = function (arr) {
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = Math.max(...arr.slice(i + 1));
+  }
+  arr[arr.length - 1] = -1;
+  return arr;
+};
 
 const result = replaceElements([17, 18, 5, 4, 6, 1]);
 console.log(result);
