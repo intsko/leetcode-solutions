@@ -4,10 +4,10 @@ Output: [1,2,4,7,5,3,6,8,9]
 */
 
 var findDiagonalOrder = function (mat) {
-  const bla = [];
+  const cells = [];
   for (let i = 0; i < mat.length; i++) {
     for (let j = 0; j < mat[0].length; j++) {
-      bla.push({
+      cells.push({
         i,
         j,
         diagonal: i + j,
@@ -15,7 +15,7 @@ var findDiagonalOrder = function (mat) {
       });
     }
   }
-  return bla
+  return cells
     .sort(
       (cell1, cell2) =>
         cell1.diagonal - cell2.diagonal ||
