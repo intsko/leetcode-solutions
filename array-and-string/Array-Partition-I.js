@@ -8,7 +8,16 @@ Explanation: All possible pairings (ignoring the ordering of elements) are:
 So the maximum possible sum is 4.
 */
 
-var arrayPairSum = function (nums) {};
+var arrayPairSum = function (nums) {
+  let sum = 0;
+  const sorted = nums.sort((a, b) => a - b);
+
+  sorted.forEach((_, i) => {
+    i % 2 === 0 ? (sum += sorted[i]) : "";
+  });
+
+  return sum;
+};
 
 const result = arrayPairSum([1, 4, 3, 2]);
 console.log(result);
