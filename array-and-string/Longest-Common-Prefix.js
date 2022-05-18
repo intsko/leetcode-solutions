@@ -4,24 +4,19 @@ Output: "fl"
 */
 
 var longestCommonPrefix = function (strs) {
-  let result = strs[0];
+  let prefix = "";
+  if (strs.length === 0) return prefix;
 
-  for (let i = 1; i < strs.length; i++) {
-    let current = strs[i];
-    let j = 0;
+  for (let i = 0; i < strs[0].length; i++) {
+    const char = strs[0][i];
 
-    while (
-      j < current.length &&
-      j < result.length &&
-      current[j] === result[j]
-    ) {
-      j++;
+    for (let j = 0; j < strs.length; j++) {
+      if (strs[j][i] !== char) return prefix;
     }
-
-    result = current.substring(0, j);
+    prefix += char;
   }
 
-  return result;
+  return prefix;
 };
 
 const result = longestCommonPrefix(["flower", "flow", "flight"]);
