@@ -4,7 +4,25 @@ Output: [1,2]
 Explanation: The sum of 2 and 7 is 9. Therefore, index1 = 1, index2 = 2. We return [1, 2].
 */
 
-var twoSum = function (numbers, target) {};
+var twoSum = function (numbers, target) {
+  if (!numbers || numbers.length === 0) return [-1, -1];
 
-const result = twoSum([2, 7, 11, 15], 9);
+  let left = 0;
+  let right = numbers.length - 1;
+
+  while (left <= right) {
+    const sum = numbers[left] + numbers[right];
+    if (sum === target) {
+      return [left + 1, right + 1];
+    } else if (sum < target) {
+      left++;
+    } else if (sum > target) {
+      right--;
+    }
+  }
+
+  return [-1, -1];
+};
+
+const result = twoSum([0, 0, 3, 4], 0);
 console.log(result);
