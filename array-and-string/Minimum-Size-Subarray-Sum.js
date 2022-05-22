@@ -19,6 +19,10 @@ var minSubArrayLen = function (target, nums) {
     }
   }
 
+  if (length === Infinity) {
+    return 0;
+  }
+
   return length;
 };
 
