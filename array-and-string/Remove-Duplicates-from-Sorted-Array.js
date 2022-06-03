@@ -5,6 +5,9 @@ Explanation: Your function should return k = 5, with the first five elements of 
 It does not matter what you leave beyond the returned k (hence they are underscores).
 */
 
-var removeDuplicates = function (nums) {};
+var removeDuplicates = function (nums) {
+  const sorted = [...new Set(nums)];
+  return sorted.length;
+};
 
-console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+console.log(removeDuplicates([1, 1, 2]));
